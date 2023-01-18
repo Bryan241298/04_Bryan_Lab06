@@ -7,6 +7,8 @@ public class CalcScript : MonoBehaviour
 {
     public Toggle USdollars;
     public Toggle JapaneseYen;
+    public Toggle ChinaYuan;
+    public Toggle HongKongDollar;
 
     public Text value;
 
@@ -43,6 +45,16 @@ public class CalcScript : MonoBehaviour
         {
             inputv *= 82.78f;
         }
+        if (HongKongDollar.isOn)
+        {
+            inputv = 5.92f;
+        }
+        if (ChinaYuan.isOn)
+        {
+            inputv = 5.12f;
+        }
+        HongKongDollar.isOn = false;
+        ChinaYuan.isOn = false;
 
         value.text = "$ " + inputv;
     }
